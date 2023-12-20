@@ -1,3 +1,5 @@
+//Copyright (c) 2023 Dudchenko Olesya
+
 #include <iostream>
 const int MAX_VECTOR_SIZE = 100000000;
 
@@ -93,9 +95,6 @@ public:
             res[i] = res[i] - v[i];
         }
     }
-
-    /*спецификатор noexcept
-    Указывает, может ли функция генерировать исключения.*/
 
     //Используется для указания, может ли функция генерировать исключения. Например, noexcept(noexcept(x.swap(y))) определяет swap,
     //выбрасывает он или нет в зависимости от результата noexcept(x.swap(y)); 

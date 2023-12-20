@@ -1,3 +1,5 @@
+//Copyright (c) 2023 Dudchenko Olesya
+
 #include "../TVector/TVector.h"
 
 #define INCLUDE_MATRIX_H_
@@ -57,21 +59,13 @@ public:
     TMatrix operator+(const TMatrix& m)
     {
         if (sz != m.sz) { throw std::logic_error("Sizes are not equal."); }
-        TMatrix Res(*this);
-        for (size_t i = 0; i < sz; i++) {
-            Res[i] = Res[i] + m[i];
-        }
-        return Res;
+        return TVector<TVector>operator+(m);
     }
 
     TMatrix operator-(const TMatrix& m)
     {
         if (sz != m.sz) { throw std::logic_error("Sizes are not equal."); }
-        TMatrix Res(*this);
-        for (size_t i = 0; i < sz; i++) {
-            Res[i] = Res[i] - m[i];
-        }
-        return Res;
+        return TVector<TVector>operator-(m);
     }
 
     TMatrix operator*(const TMatrix& m)
@@ -114,4 +108,3 @@ std::ostream& operator<<(std::ostream& ostr, const TMatrix<T>& v) {
     }
     return ostr;
 }
-
